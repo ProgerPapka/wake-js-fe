@@ -1,0 +1,15 @@
+.app-bar {
+  position: fixed;
+  height: 85px;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #141e28;
+
+  &__logo {
+    flex-basis: 30%;
+  }
+
+  &__navigation {
+    flex-basis: 70%;
+  }
+}
