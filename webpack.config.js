@@ -47,19 +47,16 @@ module.exports = {
         ]
       },
       {
-        test: /\.s(a|c)ss$/,
-        exclude: /.(s(a|c)ss)$/,
-        loader: [
-          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
+        test: /\.(png|jpg|gif)$/i,
+        use: [
           {
-            loader: 'sass-loader',
+            loader: 'url-loader',
             options: {
-              sourceMap: isDevelopment
-            }
-          }
-        ]
-      }
+              limit: 8192,
+            },
+          },
+        ],
+      },
     ]
   },
   plugins: [
@@ -75,6 +72,9 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
+    proxy: {
+      '/grphql': 'http://localhost:3000'
+    },
     historyApiFallback: true
   }
 };

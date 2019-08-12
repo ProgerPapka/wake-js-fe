@@ -1,0 +1,12 @@
+.app-test {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+
+  &__img {
+    background-image: url('../assets/test.jpg');
+    background-color: #cccccc;
+    height: 1024px;
+    width: 1024px;
+  }
+}
