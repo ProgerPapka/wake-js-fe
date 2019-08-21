@@ -73,7 +73,7 @@ module.exports = {
     compress: true,
     port: 9000,
     proxy: {
-      '/grphql': 'http://localhost:3000'
+      '/grphql': 'http://localhost:3000/grphql'
     },
     historyApiFallback: true
   }

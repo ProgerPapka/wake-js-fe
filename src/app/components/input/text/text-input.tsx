@@ -6,13 +6,15 @@ export interface TextInputProps {
   placeholder?: string;
   mask?: string;
   value?: string;
+  type?: string;
 }
 
 const TextInputUI = ({
   onChange,
   placeholder,
   value: initValue,
-  name
+  name,
+  type = "text"
 }: TextInputProps) => {
   const [value, setValue] = useState(initValue);
 
@@ -23,7 +25,7 @@ const TextInputUI = ({
   };
 
   return (
-    <input name={name} type="text" onChange={handleChange} placeholder={placeholder} value={value}/>
+    <input name={name} type={type} onChange={handleChange} placeholder={placeholder} value={value} />
   );
 };
 

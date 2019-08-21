@@ -1,8 +1,14 @@
 import React from 'react';
 import { User } from './user';
+import { Service } from './service';
+import { Reservation } from './reservation';
 
-const SimpleAppUI = () => {
-  return <User/>;
-};
-
-export const SimpleApp = React.memo(SimpleAppUI);
+export const SimpleApp = React.memo(() => {
+  return (
+    <>
+      <User />
+      <Service />
+      <Reservation />
+    </>
+  );
+});

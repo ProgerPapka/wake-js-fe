@@ -10,6 +10,7 @@ export const User = React.memo(() => {
 });
 
 const UserForm = React.memo(() => {
+
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
   };
@@ -18,10 +19,10 @@ const UserForm = React.memo(() => {
     <form onSubmit={onSubmit}>
       <TextInput name="name" onChange={(val: any) => console.log(val)} placeholder="Имя" />
       <TextInput name="surname" onChange={(val: any) => console.log(val)} placeholder="Фамилия" />
-      <TextInput name="middlename" onChange={(val: any) => console.log(val)} placeholder="Отчество" />
-      <input type="email" placeholder="Email" />
-      <input type="number" placeholder="Телефон" />
-      <input type="submit" value="Create user" />
+      <TextInput name="middleName" onChange={(val: any) => console.log(val)} placeholder="Отчество" />
+      <TextInput name="email" type="email" onChange={(val: any) => console.log(val)} placeholder="Email" />
+      <TextInput name="number" onChange={(val: any) => console.log(val)} placeholder="Телефон" />
+      <input type="submit" value="Создать пользователя" />
     </form>
   );
 });

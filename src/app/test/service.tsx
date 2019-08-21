@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { TextInput } from '../components/input/text/text-input';
+import { TextInput, TextArea} from '../components/input';
 
 export const Service = React.memo(() => {
   return (
@@ -14,10 +14,10 @@ const ServiceForm = React.memo(() => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <TextInput name="name" onChange={(value: any) => console.log(value)} />
-      <TextInput name="description" onChange={(value: any) => console.log(value)} />
-      <TextInput name="price" onChange={(value: any) => console.log(value)} />
-      <input type="submit" value="Create service" />
+      <TextInput name="name" onChange={(value: any) => console.log(value)} placeholder="Наименование сервиса/услуги"/>
+      <TextArea name="description" onChange={(value: any) => console.log(value)} placeholder="Краткое описание"/>
+      <TextInput name="price" type="number" onChange={(value: any) => console.log(value)} placeholder="Цена"/>
+      <input type="submit" value="Создать услугу/сервис" />
     </form>
   );
 });
