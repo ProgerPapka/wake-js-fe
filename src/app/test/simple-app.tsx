@@ -1,8 +1,8 @@
 import React from 'react';
-import { UserData } from './UserData';
+import { User } from './user';
 
 const SimpleAppUI = () => {
-  return <UserData/>;
+  return <User/>;
 };
 
 export const SimpleApp = React.memo(SimpleAppUI);

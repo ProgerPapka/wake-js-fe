@@ -21,7 +21,7 @@
         "eofline": false,
         "max-line-length": [
             true,
-            250
+            120
         ],
         "no-trailing-whitespace": true,
         "trailing-comma": [

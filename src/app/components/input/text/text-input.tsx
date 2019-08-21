@@ -1,7 +1,8 @@
 import React, { ChangeEvent, useState } from 'react';
 
 export interface TextInputProps {
-  onChange: Function;
+  name: string;
+  onChange: (value: any) => any;
   placeholder?: string;
   mask?: string;
   value?: string;
@@ -10,18 +11,19 @@ export interface TextInputProps {
 const TextInputUI = ({
   onChange,
   placeholder,
-  value: initValue
+  value: initValue,
+  name
 }: TextInputProps) => {
   const [value, setValue] = useState(initValue);
 
-  const onChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {value} = e.target;
     setValue(value);
     onChange(value);
   };
 
   return (
-    <input type="text" onChange={onChangeValue} placeholder={placeholder} value={value}/>
+    <input name={name} type="text" onChange={handleChange} placeholder={placeholder} value={value}/>
   );
 };
 
