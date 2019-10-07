@@ -9,24 +9,16 @@ export interface TextInputProps {
   type?: string;
 }
 
-const TextInputUI = ({
-  onChange,
-  placeholder,
-  value: initValue,
-  name,
-  type = "text"
-}: TextInputProps) => {
+const TextInputUI = ({ onChange, placeholder, value: initValue, name, type = 'text' }: TextInputProps) => {
   const [value, setValue] = useState(initValue);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const {value} = e.target;
+    const { value } = e.target;
     setValue(value);
     onChange(value);
   };
 
-  return (
-    <input name={name} type={type} onChange={handleChange} placeholder={placeholder} value={value} />
-  );
+  return <input name={name} type={type} onChange={handleChange} placeholder={placeholder} value={value} />;
 };
 
 export const TextInput = React.memo(TextInputUI);

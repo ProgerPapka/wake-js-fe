@@ -1,20 +1,38 @@
 {
-  "name": "react-admin",
+  "name": "wake-js-fe",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "bundle": "webpack",
     "test": "",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
     "check-types": "tsc",
-    "tslint": "tslint './src/**/*.{ts,tsx}'",
-    "tslint:fix": "npm run tslint -- --fix",
-    "precommit": "npm run tslint && npm run test"
+    "prettier": "prettier \" ./src/**/*{.ts,.tsx}\" --check",
+    "lint": "eslint ./src --ext .js,.ts,.tsx",
+    "lint:fix": "npm run lint --fix"
   },
-  "author": "",
-  "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && npm run lint && npm run test"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,.ts,.tsx}": [
+      "npm run lint && npm run test"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./src/setupTests.ts"
+    ]
+  },
   "dependencies": {
     "@apollo/react-hoc": "^3.0.1",
     "@apollo/react-hooks": "^3.0.1",
@@ -41,25 +59,35 @@
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
     "@types/classnames": "^2.2.9",
+    "@types/enzyme": "^3.10.3",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/graphql": "^14.2.3",
+    "@types/jest": "^24.0.18",
     "@types/lodash": "^4.14.134",
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",
     "@types/react-router-dom": "^4.3.4",
     "@types/reselect": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.4.0",
+    "eslint": "^6.3.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^3.0.2",
     "jest": "^24.8.0",
+    "lint-staged": "^9.2.5",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "tslint": "^5.18.0",
-    "tslint-immutable": "^6.0.0",
     "typescript": "^3.5.2",
     "url-loader": "^2.1.0",
     "webpack": "^4.35.0",
