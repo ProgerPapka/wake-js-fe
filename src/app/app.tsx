@@ -1,3 +1,4 @@
 import React from 'react';
+import { Main } from './page/main/main';
 
-export const App = () => <p>test</p>;
+export const App = () => <Main />;

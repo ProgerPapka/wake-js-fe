@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const isDevelopment = process.env.NODE_ENV === 'development';
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
   // webpack will take the files from ./src/index
   entry: './src/index',
@@ -47,7 +48,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif)$/i,
+        test: /\.(png|jpg|gif|ico)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -57,16 +58,24 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpg|gif|ico)$/,
+        use: ['file-loader?name=[name].[ext]']
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      favicon: './src/assets/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? '[name].css' : '[name].[hash].css',
       chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
-    })
+    }),
+    new CopyPlugin([
+      { from: './src/assets', to: './assets' }
+    ])
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
