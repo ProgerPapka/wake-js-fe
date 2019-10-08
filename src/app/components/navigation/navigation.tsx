@@ -1,6 +1,7 @@
 import React from 'react';
 import { map } from 'lodash';
 import { Link } from '../link';
+import styles from './navigation.scss';
 
 export interface ItemProps {
   value: string;
@@ -9,15 +10,17 @@ export interface ItemProps {
 
 export interface NavigationProps {
   items: Array<ItemProps>;
-  styles: React.CSSProperties;
+  className?: string;
 }
 
-export const Navigation = ({ items }: NavigationProps) => {
+export const Navigation = ({ items, className }: NavigationProps) => {
   return (
-    <nav>
-      {map(items, item => (
-        <Link {...item} />
-      ))}
-    </nav>
+    <div className={className}>
+      <nav className={styles.navigation}>
+        {map(items, item => (
+          <Link {...item} key={item.value} className={styles.navigationItem} />
+        ))}
+      </nav>
+    </div>
   );
 };

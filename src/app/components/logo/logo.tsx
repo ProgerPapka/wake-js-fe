@@ -3,7 +3,7 @@ import styles from './logo.scss';
 import image from '../../../assets/logo/Wakeclub1.png';
 
 interface LogoProps {
-  className: string;
+  className?: string;
 }
 
 export const Logo = ({ className }: LogoProps) => {
