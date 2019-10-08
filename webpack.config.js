@@ -57,11 +57,7 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.(png|svg|jpg|gif|ico)$/,
-        use: ['file-loader?name=[name].[ext]']
-      },
+      }
     ]
   },
   plugins: [
