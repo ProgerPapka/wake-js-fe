@@ -1,0 +1,16 @@
+@import '../../../../styles/variables';
+
+.profile {
+  width: 52px;
+  height: 52px;
+
+  &__icon {
+    fill: $color-secondary;
+  }
+
+  &:hover {
+    .profile__icon {
+      fill: $color-primary;
+    }
+  }
+}
