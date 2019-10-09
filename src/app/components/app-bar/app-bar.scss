@@ -14,7 +14,11 @@
   }
 
   &__navigation {
-    flex-basis: 70%;
+    flex-basis: 50%;
     @include  flex-center;
+  }
+
+  &__login {
+    flex-basis: 10%;
   }
 }

@@ -1,7 +1,8 @@
 @import '../../../styles/mixins';
+@import '../../../styles/variables';
 
 .navigation {
-  width: 500px;
+  width: 600px;
   height: 100%;
   display: flex;
   justify-content: space-around;
@@ -13,12 +14,13 @@
     display: flex;
     justify-content: center;
     line-height: 85px;
-    color: #e91e63;
+    color: $color-secondary;
     font-size: 18px;
     text-decoration: none;
 
     &:hover {
-      border-bottom: 5px solid #e91e63;
+      color: $color-primary;
+      border-bottom: 3px solid $color-primary;
     }
   }
 }
