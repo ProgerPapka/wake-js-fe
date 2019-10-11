@@ -1,0 +1,26 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.footer {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.copyright {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-main;
+  color: $color-secondary;
+  font-size: 14px;
+
+  @include unselectable;
+}
+
+.footer-links {
+  width: 100%;
+}
