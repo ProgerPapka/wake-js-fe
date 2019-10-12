@@ -1,15 +1,15 @@
 @import '../../../../styles/variables';
 
-.profile {
-  width: 52px;
-  height: 52px;
+.instagram {
+  width: 24px;
+  height: 24px;
 
   &__icon {
     fill: $color-secondary;
   }
 
   &:hover {
-    .profile__icon {
+    .instagram__icon {
       fill: $color-primary;
     }
   }
