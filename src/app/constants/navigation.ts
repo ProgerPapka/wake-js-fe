@@ -1,7 +1,7 @@
 export const NAVIGATION = [
   {
     value: 'Главная',
-    pathTo: '/main',
+    pathTo: '/',
   },
   {
     value: 'Новости',
