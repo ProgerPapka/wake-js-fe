@@ -16,7 +16,7 @@
     line-height: 85px;
     color: $color-secondary;
     font-size: 18px;
-    text-decoration: none;
+    text-decoration: none !important;
 
     &:hover {
       color: $color-primary;

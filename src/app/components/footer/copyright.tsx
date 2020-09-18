@@ -7,13 +7,13 @@ export const Copyright = () => (
   <div className={styles.footerLegal}>
     <span className={styles.copyright}>{`\u00A9 Wakeclub ${new Date().getFullYear()}`}</span>
     <div className={styles.socialLinks}>
-      <a href={'https://www.instagram.com/wake_63'} target={'_blank'}>
+      <a href={'https://www.instagram.com/wake_63'} target={'_blank'} rel="noreferrer">
         <Icon.Instagram />
       </a>
-      <a href={'https://www.instagram.com/wake_63'} target={'_blank'}>
+      <a href={'https://www.instagram.com/wake_63'} target={'_blank'} rel="noreferrer">
         <Icon.Telegram />
       </a>
-      <a href={'https://vk.com/wake63'} target={'_blank'}>
+      <a href={'https://vk.com/wake63'} target={'_blank'} rel="noreferrer">
         <Icon.Vk />
       </a>
     </div>
